@@ -6,7 +6,7 @@ on:
         type: choice
         description: "配置文件"
         required: true
-        default: oneplus_ace2pro_v
+        default: oneplus_ace3_pro_v
         options:
           - oneplus_nord_ce4_v
           - oneplus_ace_3v_v
@@ -49,7 +49,7 @@ on:
           - NoN
       SUFFIX:
         type: string
-        description: "自定义内核后缀 (留空则使用随机字符串)"
+        description: "-android14-11-o-g1132d864665d"
         required: false
         default: ""
       FAST_BUILD:
