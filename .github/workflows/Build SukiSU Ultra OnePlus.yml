@@ -49,9 +49,9 @@ on:
           - NoN
       SUFFIX:
         type: string
-        description: "-android14-11-o-g1132d864665d"
+        description: "自定义内核后缀 (留空则使用随机字符串)"
         required: false
-        default: ""
+        default: "-android14-11-o-g1132d864665d"
       FAST_BUILD:
         type: boolean
         description: "是否启用极速构建？"
