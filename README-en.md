@@ -73,39 +73,29 @@
 > </details>
 
 ------
-> [!IMPORTANT]  
-> About compile time: generally, older devices build faster.  
+> [!IMPORTANT]
+>Regarding build duration: in general, the older the device model, the faster the compilation.
 > <details>
-> <summary><strong>Click to view compile time Using Fast Build (clang make)</strong></summary>
+> <summary><strong>Click to view build time using ultra-fast clang + make</strong></summary>
 >
->>>>0.Known exceptions: some non-A15 models (e.g. OnePlus 11-A14;OnePlus 11-A13)
->
->>>`1h8min~1h17min,max:1h17min`
->>>>0.All Other Devices
-> 
->>>`22min~31min,max:35min`
-> 
+>|Device Type                | Average Duration Range            | Maximum Duration     |
+>|-------------------------------------|--------------------------|------------------|
+>| `All other models`                  | `19min ~ 33min`         | `35min`         |
+>| `Special models e.g.: OnePlus 11-A14; OnePlus 11-A13`    | `55min ~ 1h17min`     | `1h23min` |
 > </details>
+> 
 > <details>
-> <summary><strong>Click to view compile time Using official build.sh</strong></summary>
+> <summary><strong>Click to view build time using official build.sh</strong></summary>
 >
->>>>0.Known exceptions: some non-A15 models (e.g. OnePlus 11-A14;OnePlus 11-A13)
-> 
->>>`1h14min~1h28min,max:1h28min`
->>>>1.sm8450, sm8475, sm8550
-> 
->>>`30~35min,max:45min`
->>>>2.sm7675, sm7550, sm8650
-> 
->>>`1h1min~1h12min,max:1h32min`
->>>>3.sm8750
-> 
->>>`2h1min~2h22min,max:2h45min`
->> 
-> </details>
+>|Device Type        | Average Duration Range               | Maximum Duration |
+>|--------------------------|-----------------------------|------------------|
+>| `sm8450, sm8475, sm8550` | `29min ~ 35min`             | `45min`
+>| `sm7675, sm7550, sm8650` |`59min ~ 1h12min`| `1h28min`        |
+>| `sm8750`|`1h55min ~ 2h22min`| `2h27min`       |
+>| `Special models e.g.: OnePlus 11-A14; OnePlus 11-A13` | `1h1min ~ 1h28min`  |`1h32min`|
 >
-> So, if your runtime exceeds the max time listed, try rerunning and check the `step` logs in case it's a platform issue.
-
+></details>
+>If your build time exceeds the maximum duration listed for your model, please try rebuilding and check the steps to ensure it's not an issue with the official environment.
 
 ------
 > [!CAUTION]
@@ -118,18 +108,18 @@
 > `dtbo.img`, `system_dlkm.erofs.img`, `vendor_dlkm.img`, and `vendor_boot.img`,
 > **otherwise the device may fail to boot!**
 >
-> If you have enabled the **`ZRAM`** algorithm, make sure to install the ZRAM module
+> If you have enabled the **`ZRAM`** algorithm, make sure to install the `ZRAM` module
 > **before rebooting** after flashing with `Anykernel3`. You may need to adjust some parameters manually.
 > Note: The **5.10 kernel does NOT support `ZRAM`**, as the `zram.ko` module path could not be found.
 >
-> We've noticed that some **`sm8650`** devices fail to boot after updating to **830** due to kernel version changes.
-> Please wait for upstream sources to be updated.
+> **We've noticed that some`sm8650`devices fail to boot after updating to`830/831`due to kernel version changes.Please wait for upstream sources to be updated.**
 
  
 ------
  
 # Changelog
--- Support enabling WindChill driver for selected devices (optional), driver from [@HanKuCha](https://github.com/HanKuCha).  
+-- Add `TRUSTY_EXISTS` to automatically detect whether the `6.6` kernel has defects in the kernel source code and determine whether `sed` is needed.  
+-- Support enabling fongchi driver for selected devices (optional), driver from [@HanKuCha](https://github.com/HanKuCha).  
 -- Remove all device-related parameters from `input` except the device config file `FEIL`, and propagate to `feil-map` to support more options.  
 -- When `ZRAM` is enabled, automatically download and modify the ZRAM additional module, module from [@FURLC](https://github.com/FURLC).  
 -- Fix issues where `ZRAM` is unusable or unable to launch non-system apps.  
