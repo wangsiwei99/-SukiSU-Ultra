@@ -80,7 +80,7 @@
 >
 >|Device Type                | Average Duration Range            | Maximum Duration     |
 >|-------------------------------------|--------------------------|------------------|
->| `All other models`                  | `19min ~ 33min`         | `35min`         |
+>| `All other models`                  | `19min ~ 29min`         | `35min`         |
 >| `Special models e.g.: OnePlus 11-A14; OnePlus 11-A13`    | `55min ~ 1h17min`     | `1h23min` |
 > </details>
 > 
@@ -112,8 +112,6 @@
 > **before rebooting** after flashing with `Anykernel3`. You may need to adjust some parameters manually.
 > Note: The **5.10 kernel does NOT support `ZRAM`**, as the `zram.ko` module path could not be found.
 >
-> **We have noticed that some `sm8650` devices fail to boot after updating to builds `830/831` due to a kernel minor version change — this is because the upstream has upgraded from `6.1.75` to `6.1.118`. Please wait for the upstream source code to be updated (expected around `July 4`).Additionally, `5.15` may also receive an update in the next version, potentially jumping from `5.15.149` to `5.15.170`. Please stay alert.**
-
  
 ------
  
